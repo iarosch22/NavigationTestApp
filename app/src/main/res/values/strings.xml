@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NavigationTestApp</string>
+    <string name="app_cat_fact">CAT PURRS</string>
+    <string name="app_hamster_fact">HAMSTER EATS A LOT</string>
 </resources>

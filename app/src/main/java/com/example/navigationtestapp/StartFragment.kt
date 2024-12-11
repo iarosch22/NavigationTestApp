@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.navigationtestapp.databinding.FragmentStartBinding
 
 class StartFragment: Fragment() {
@@ -21,12 +22,20 @@ class StartFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.catBtn.setOnClickListener {
+        super.onViewCreated(view, savedInstanceState)
 
+        binding.catBtn.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_startFragment_to_factFragment,
+                FactFragment.createArgs(getString(R.string.app_cat_fact))
+            )
         }
 
-        binding.catBtn.setOnClickListener {
-
+        binding.hamsterBtn.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_startFragment_to_factFragment,
+                FactFragment.createArgs(getString(R.string.app_hamster_fact))
+            )
         }
     }
 
